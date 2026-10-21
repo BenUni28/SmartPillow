@@ -1,4 +1,4 @@
-import { Home, TrendingUp } from "lucide-react";
+import { Home, Lightbulb, TrendingUp } from "lucide-react";
 import styles from "./TabBar.module.css";
 
 interface TabBarProps {
@@ -8,6 +8,7 @@ interface TabBarProps {
 
 const TABS = [
   { id: "home", label: "Sleep Report", icon: Home },
+  { id: "insights", label: "Insights", icon: Lightbulb },
   { id: "trends", label: "Your Trends", icon: TrendingUp },
 ];
 

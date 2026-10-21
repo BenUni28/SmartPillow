@@ -3,6 +3,7 @@ import { PhoneFrame } from "./components/layout/PhoneFrame";
 import { TabBar } from "./components/layout/TabBar";
 import { Onboarding } from "./components/screens/Onboarding";
 import { Home } from "./components/screens/Home";
+import { Insights } from "./components/screens/Insights";
 import { Trends } from "./components/screens/Trends";
 import styles from "./App.module.css";
 
@@ -17,6 +18,8 @@ function App() {
     switch (currentScreen) {
       case "home":
         return <Home />;
+      case "insights":
+        return <Insights />;
       case "trends":
         return <Trends />;
       default:

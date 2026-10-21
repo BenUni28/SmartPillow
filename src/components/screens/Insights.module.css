@@ -1,0 +1,155 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.summaryCard {
+  padding: var(--space-6) !important;
+  background: linear-gradient(135deg, var(--light-bg), #f0ebe3);
+}
+
+.summaryHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.trendIcon {
+  color: var(--teal);
+}
+
+.summaryTitle {
+  font-size: var(--size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-4);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: var(--size-3xl);
+  font-weight: 700;
+  color: var(--teal);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: var(--size-xs);
+  color: var(--text-tertiary);
+  font-weight: 500;
+  margin-top: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tipsSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tipsTitle {
+  font-size: var(--size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.tipsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tipCard {
+  padding: var(--space-5) !important;
+  border-left: 4px solid var(--border-light);
+  transition: all var(--duration-fast) var(--timing);
+  cursor: pointer;
+}
+
+.tipCard:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.tipCard.priority-high {
+  border-left-color: var(--error);
+  background: #fef2f2;
+}
+
+.tipCard.priority-medium {
+  border-left-color: var(--warning);
+  background: #fffbeb;
+}
+
+.tipCard.priority-low {
+  border-left-color: var(--success);
+  background: #ecfdf5;
+}
+
+.tipHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.tipIcon {
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.tipTitle {
+  font-size: var(--size-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.tipDetail {
+  font-size: var(--size-sm);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.priorityBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+  font-size: var(--size-xs);
+  font-weight: 600;
+  color: var(--error);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

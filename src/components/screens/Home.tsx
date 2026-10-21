@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
 import { Header } from "../layout/Header";
 import { Card } from "../common/Card";
+import { Button } from "../common/Button";
 import { Skeleton } from "../common/Skeleton";
 import { useAppStore } from "../../store/appStore";
 import styles from "./Home.module.css";
-import { AlertCircle, TrendingDown, Moon, Zap } from "lucide-react";
+import { AlertCircle, TrendingDown, Moon, Zap, HelpCircle, ChevronRight } from "lucide-react";
 
 export function Home() {
   const {
     nights,
+    setCurrentScreen,
     recordHomeViewTime,
     logEvent,
   } = useAppStore();
 
   const [loading, setLoading] = useState(true);
+  const [showScoreInfo, setShowScoreInfo] = useState(false);
   const [expandedInsight, setExpandedInsight] = useState<string | null>(null);
 
   const today = nights[nights.length - 1];
@@ -53,12 +56,44 @@ export function Home() {
         ) : (
           <>
             <div className={styles.centerContent}>
-              <Card className={styles.scoreCard}>
-                <div className={styles.scoreCircle}>
-                  <span className={styles.score}>{today.score}</span>
-                  <span className={styles.scoreLabel}>Score</span>
-                </div>
-              </Card>
+              <div className={styles.scoreSection}>
+                <Card
+                  className={styles.scoreCard}
+                  onClick={() => {
+                    setCurrentScreen("insights");
+                    logEvent("click_score_to_insights", "home");
+                  }}
+                >
+                  <div className={styles.scoreCircle}>
+                    <span className={styles.score}>{today.score}</span>
+                    <span className={styles.scoreLabel}>Score</span>
+                  </div>
+                </Card>
+
+                <button
+                  className={styles.scoreInfoBtn}
+                  onClick={() => {
+                    setShowScoreInfo(!showScoreInfo);
+                    logEvent("toggle_score_info", "home");
+                  }}
+                  aria-label="Score explanation"
+                >
+                  <HelpCircle size={18} />
+                </button>
+              </div>
+
+              {showScoreInfo && (
+                <Card className={styles.scoreExplanation}>
+                  <p className={styles.scoreExplainTitle}>What's your Sleep Score?</p>
+                  <ul className={styles.scoreExplainList}>
+                    <li><strong>90-100:</strong> Excellent sleep quality</li>
+                    <li><strong>70-89:</strong> Good sleep, room for improvement</li>
+                    <li><strong>50-69:</strong> Average, consider our tips</li>
+                    <li><strong>&lt;50:</strong> Poor, prioritize adjustments</li>
+                  </ul>
+                  <p className={styles.scoreExplainFooter}>Based on duration, position, and neck alignment.</p>
+                </Card>
+              )}
 
               <div className={styles.reasonBox}>
                 <p className={styles.reasonText}>{today.mainReason}</p>
@@ -78,6 +113,17 @@ export function Home() {
                   </div>
                 </div>
               </Card>
+
+              <Button
+                variant="primary"
+                onClick={() => {
+                  setCurrentScreen("insights");
+                  logEvent("click_see_insights", "home");
+                }}
+                className={styles.seeInsightsBtn}
+              >
+                See detailed insights <ChevronRight size={18} />
+              </Button>
 
               <div className={styles.insightsGrid}>
                 {insights.map(({ id, icon: Icon, label, detail }) => (
