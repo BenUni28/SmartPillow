@@ -1,0 +1,241 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+.heroSection {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(212, 165, 116, 0) 0%, rgba(212, 165, 116, 0.3) 100%);
+}
+
+.heroText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroGreeting {
+  font-size: var(--size-2xl);
+  font-weight: 600;
+  color: var(--white);
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.centerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  padding: 0 var(--space-6);
+  width: 100%;
+  max-width: 100%;
+}
+
+.scoreCard {
+  padding: var(--space-6) !important;
+  width: 100%;
+}
+
+.scoreCircle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), #b8956b);
+  box-shadow: var(--shadow-md);
+  margin: 0 auto;
+}
+
+.score {
+  font-family: var(--font-heading);
+  font-size: var(--size-5xl);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.scoreLabel {
+  font-size: var(--size-xs);
+  color: rgba(254, 252, 248, 0.85);
+  font-weight: 500;
+  margin-top: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.reasonBox {
+  background: var(--light-bg);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--teal);
+  width: 100%;
+  text-align: center;
+}
+
+.reasonText {
+  font-size: var(--size-base);
+  color: var(--text-primary);
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.riskCard {
+  padding: var(--space-5) !important;
+  width: 100%;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--timing);
+}
+
+.riskCard:hover {
+  transform: translateY(-2px);
+}
+
+.riskCard.risk-low {
+  background: #ecfdf5;
+  border-left: 4px solid var(--success);
+}
+
+.riskCard.risk-medium {
+  background: #fffbeb;
+  border-left: 4px solid var(--warning);
+}
+
+.riskCard.risk-high {
+  background: #fef2f2;
+  border-left: 4px solid var(--error);
+}
+
+.riskContent {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: center;
+}
+
+.riskCard.risk-low .riskContent {
+  color: #047857;
+}
+
+.riskCard.risk-medium .riskContent {
+  color: #b45309;
+}
+
+.riskCard.risk-high .riskContent {
+  color: #991b1b;
+}
+
+.riskText {
+  flex: 1;
+  text-align: center;
+}
+
+.riskLabel {
+  font-weight: 600;
+  font-size: var(--size-sm);
+  margin: 0;
+}
+
+.insightsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.insightCard {
+  padding: var(--space-4) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--timing);
+  gap: var(--space-2);
+  min-height: 120px;
+}
+
+.insightCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.insightCard.expanded {
+  min-height: 160px;
+  box-shadow: var(--shadow-md);
+}
+
+.insightIcon {
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.insightLabel {
+  font-size: var(--size-xs);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.insightDetail {
+  font-size: var(--size-xs);
+  color: var(--text-secondary);
+  margin: 0;
+  animation: slideDown var(--duration-fast) var(--timing);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.privacy {
+  font-size: var(--size-xs);
+  color: var(--text-tertiary);
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  padding: 0 var(--space-6);
+}
+

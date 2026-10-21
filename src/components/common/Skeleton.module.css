@@ -1,0 +1,16 @@
+@keyframes skeleton-loading {
+  0% {
+    background-color: var(--border-light);
+  }
+  50% {
+    background-color: #c5cdd8;
+  }
+  100% {
+    background-color: var(--border-light);
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  background-color: var(--border-light);
+}

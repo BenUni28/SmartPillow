@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.hero {
+  flex: 0 0 45%;
+  background: linear-gradient(135deg, #d4a574 0%, #c9a876 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(212, 165, 116, 0) 0%, rgba(212, 165, 116, 0.4) 100%);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-8) var(--space-6);
+  gap: var(--space-6);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--size-4xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: var(--size-lg);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.features li {
+  font-size: var(--size-base);
+  color: var(--text-secondary);
+  margin: 0;
+  padding-left: var(--space-6);
+}
+
+.cta {
+  align-self: flex-start;
+  min-height: 56px !important;
+  padding-left: var(--space-8) !important;
+  padding-right: var(--space-8) !important;
+  font-size: var(--size-lg) !important;
+}
+
+.disclaimer {
+  font-size: var(--size-xs);
+  color: var(--text-tertiary);
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+}
+
+

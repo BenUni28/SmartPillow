@@ -1,0 +1,11 @@
+.card {
+  background: var(--light-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-fast) var(--timing);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
